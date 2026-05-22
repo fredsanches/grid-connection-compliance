@@ -1,0 +1,48 @@
+# Compiled files (bytecode) genereted by Python to run faster
+__pycache__/
+*.py[cod]
+*$.py.class
+
+# Folders created by 'pip install -e'
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual Environments
+.venv
+venv/
+ENV/
+env/
+
+# Local vscode config files
+.vscode/
+
+# --- SO Trashes ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# windows
+Thumbs.db
+ehthumbs.db
+
+# Jupyter checkpoints
+.ipynb_checkpoints
+
+# --- Quality Tools ---
+.mypy_cache/
+.pytest_cache/
+# test coverages (cobertura de testes)
+.coverage
+htmlcov/
+
+# Folder with data files
+data/
+
+# Bash Scripts
+*.ps1
+
+# AI agent files
+.agent/
+*.md
