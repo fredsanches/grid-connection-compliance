@@ -45,4 +45,3 @@ data/
 
 # AI agent files
 .agent/
-*.md
