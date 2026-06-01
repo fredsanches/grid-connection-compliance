@@ -1,7 +1,7 @@
-# System Instructions: Grid Connection Analysis Automation (1~5 MW PV)
+# System Instructions: Grid Connection Analysis Automation
 
 ## 1. Project Overview & Regulatory Context
-* **Objective:** Automate power flow calculations and grid integration impact studies for Solar Power Plants (UFV) ranging from 1 to 5 MW.
+* **Objective:** Automate power flow calculations and grid integration impact studies for Solar Power Plants (UFV).
 * **Core Goal:** Validate, contest, and minimize the financial impact of network upgrade requirements (Orçamentos de Conexão) issued by Brazilian Power Utilities (e.g., COELBA, CEMIG, CPFL).
 * **Data Sources:** ANEEL's BDGD (Base de Dados Geográfica da Distribuidora) in File Geodatabase (.gdb) format.
 * **Simulation Engine:** `OpenDSSDirect.py` driven by data processed via `BDGD-Tools`.
@@ -17,8 +17,8 @@
 ---
 
 ## 3. Coding Standards & Software Architecture
-* **Indentation & Style:** Strict 4-space indentation complying with PEP 8.
-* **Type Hinting:** 100% typed code using the `typing` module (or Python 3.10+ native pipe syntax). No implicit `Any`.
+* **Indentation & Style:** Strict 2-space indentation complying with PEP 8.
+* **Type Hinting:** 100% typed code using the `typing` module (or Python 3.10+ native pipe syntax). No implicit `Any`. Use `@overload` when different types of arguments is required (polimorphism).
 * **Documentation:** Complete Sphinx or Google-style docstrings for every class, method, and function, detailing Parameters, Raises, and Returns.
 * **Design Patterns:** Focus on Clean Code and domain-driven design. Leverage advanced constructs:
     * `dataclasses` for pure data containers (e.g., BusData, ConductorSpecs).
