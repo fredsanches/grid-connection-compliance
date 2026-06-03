@@ -25,26 +25,29 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
-   """Generate a BDGD inventory report.
+  """Generate a BDGD inventory report.
 
   Raises:
-    FileNotFoundError: If the GDB path does not exist.
-  """
+    IsADirectoryError: If output is a dir, not a file.
+"""
    
-   args = parse_args()
-   gdb_path=Path(args.gdb_path)
-   output_path=Path(args.output)
+  args         = parse_args()
+  gdb_path     =Path(args.gdb_path)
+  output_path  =Path(args.output)
 
-   layers   = build_inventory(gdb_path)
-   markdown = render_inventory_markdown(
-      gdb_path=gdb_path,
-      layers=layers,
-      source=str(args.source),
-      download_date=str(args.download_date)
-   )
-
-   output_path.mkdir(parents=True, exist_ok=True)
-   output_path.write_text(markdown, encoding="utf-8")
+  layers   = build_inventory(gdb_path)
+  markdown = render_inventory_markdown(
+    gdb_path=gdb_path,
+    layers=layers,
+    source=str(args.source),
+    download_date=str(args.download_date)
+  )
+  if output_path.exists() and output_path.is_dir():
+      raise IsADirectoryError(
+         f"Output path points to a directory, expected file: {output_path}"
+      )
+  output_path.parent.mkdir(parents=True, exist_ok=True)
+  output_path.write_text(markdown, encoding="utf-8")
 
 
 if __name__ == "__main__":
