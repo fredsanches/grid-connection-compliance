@@ -22,6 +22,8 @@ def test_build_inventory_classifies_topology_candidates(
     ["SSDMT", "LineString"],
     ["UNTRMT", "Point"],
   ]
+
+  # act as an iterator
   mock_read_info.side_effect = [
     {
       "geometry_type": "LineString",
