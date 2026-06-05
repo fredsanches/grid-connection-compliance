@@ -37,8 +37,9 @@ ehthumbs.db
 .coverage
 htmlcov/
 
-# Folder with data files
+# Folder with data and doc files
 data/
+docs/references/
 
 # Bash Scripts
 *.ps1
